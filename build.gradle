@@ -16,7 +16,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'eureka-client'
+	baseName = 'hello'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -35,13 +35,14 @@ dependencyManagement {
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile('org.springframework.boot:spring-boot-starter-web')
-
-	compile "org.springframework.cloud:spring-cloud-starter-zuul"
-	compile "org.springframework.cloud:spring-cloud-starter-hystrix"
-	compile "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard"
+	compile('org.springframework.cloud:spring-cloud-starter-feign')
+	compile('org.springframework.cloud:spring-cloud-starter-zipkin')
+//	compile "org.springframework.cloud:spring-cloud-starter-zuul"
+//	compile "org.springframework.cloud:spring-cloud-starter-hystrix"
+//	compile "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard"
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+//	testCompile('org.springframework.cloud:spring-cloud-starter-eureka-server')
 }
 
 repositories {
